@@ -28,14 +28,15 @@ app.use(express.static("public"));
 app.engine("handlebars", engine({defaultLayout: "main", layoutsDir: ``}));
 app.set("view engine", "handlebars");
 
-app.use('/', (req, res)=> {
-  return res.render('home')
-})
 
 app.use("/v1", authController);
 
 app.use('/v1/task', tasksController)
 
+
+app.use('/', (req, res)=> {
+  return res.render('home')
+})
 app.listen(PORT, () => {
   console.log(`🚀 Server started on port ${PORT}`);
 });
