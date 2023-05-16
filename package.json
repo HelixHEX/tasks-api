@@ -5,7 +5,7 @@
   "author": "Elias",
   "license": "MIT",
   "scripts": {
-    "start": "yarn tailwind && node index.js",
+    "start": "node index.js",
     "dev": "nodemon index.js",
     "tailwind": "npx tailwindcss -i ./css/styles.css -o ./dist/output.css",
     "tailwind:dev": "npx tailwindcss -i ./css/styles.css -o ./public/css/styles.css --watch",

@@ -25,8 +25,12 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-app.engine("handlebars", engine());
+app.engine("handlebars", engine({defaultLayout: "main", layoutsDir: ``}));
 app.set("view engine", "handlebars");
+
+app.use('/', (req, res)=> {
+  return res.render('home')
+})
 
 app.use("/v1", authController);
 
